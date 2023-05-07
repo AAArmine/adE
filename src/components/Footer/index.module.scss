@@ -1,0 +1,105 @@
+@import "@/styles/breakpoints.scss";
+
+.footer-container {
+  display: grid;
+  grid-template-areas: "footer-bar logo contacts";
+  padding-top: 2rem;
+  @include large {
+    grid-template-columns: 15% 25% 60%;
+  }
+  @include medium {
+    grid-template-areas:
+      "logo logo logo"
+      "footer-bar footer-bar footer-bar"
+      "contacts contacts contacts";
+  }
+  .footer-menu {
+    grid-area: footer-bar;
+    color: var(--grey3);
+    // z-index: -1;
+    @include medium {
+      text-align: center;
+      padding: 3rem 0 1rem;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        padding-bottom: 1.5rem;
+      }
+      li span {
+        position: relative;
+        font-size: 13px;
+        a {
+          font-family: roboto-bold;
+          color: var(--grey3);
+        }
+      }
+      li span a::after {
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        height: 2px;
+        width: 0%;
+        background-color: #eb2c3283;
+        display: block;
+        content: "";
+        transition: 0.3s;
+      }
+      li span a.active {
+        border-bottom: 2px solid var(--main);
+      }
+      li span a:not(.active):hover:after {
+        left: 0;
+        width: 100%;
+      }
+      li span a:not(.active):active:after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+  .logo {
+    grid-area: logo;
+    text-align: center;
+    max-width: 22rem;
+    margin: auto;
+    img {
+      width: 70%;
+    }
+    p {
+      font-size: 11px;
+      max-width: 75%;
+      margin: auto;
+      font-family: roboto-bold;
+      padding-top: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+  .contacts-container {
+    grid-area: contacts;
+    text-align: left;
+    .contacts {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 4rem;
+      font-size: 12px;
+      padding-bottom: 1.5rem;
+      @include medium {
+        padding-left: 1rem;
+      }
+      .img-cont {
+        padding-right: 1rem;
+      }
+      .text-cont {
+        span {
+          position: relative;
+          top: 0.3rem;
+          color: var(--grey3);
+        }
+      }
+    }
+    .contacts.pointer {
+      cursor: pointer;
+    }
+  }
+}

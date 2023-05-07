@@ -1,0 +1,6 @@
+query manufacturers {
+  manufacturers {
+    id
+    name
+  }
+}

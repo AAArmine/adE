@@ -1,0 +1,13 @@
+query companies {
+  companies {
+    id
+    fullName
+    name
+    address1
+    latitude
+    longitude
+    phone
+    email
+    web
+  }
+}

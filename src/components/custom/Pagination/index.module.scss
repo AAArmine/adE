@@ -1,0 +1,126 @@
+@import "@/styles/breakpoints.scss";
+
+.pagination-container {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  @include medium {
+    position: relative;
+    top: -3rem;
+  }
+
+  nav {
+    div {
+      display: inline;
+    }
+    span.page-item {
+      padding: 0.5rem;
+      display: inline-block;
+      cursor: pointer;
+      border: 1px solid var(--grey2);
+      width: 2.5rem;
+      margin: 0.3rem;
+      font-weight: 600;
+      box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+      transition: box-shadow 0.5s ease;
+      @include medium {
+        padding: 0.3rem;
+        width: 1.8rem;
+        margin: 0.2rem;
+        font-size: 12px;
+      }
+      &:hover:not(.active) {
+        box-shadow: none;
+      }
+      &.active {
+        background-color: #e3e3e4;
+        border: 1px solid #e3e3e4;
+        pointer-events: none;
+      }
+    }
+    span.terminal-page {
+      font-weight: 600;
+      transition: color 0.5s ease;
+      display: inline-block;
+      cursor: pointer;
+       @include medium {
+        font-size: 12px;
+      }
+      &.last {
+        padding-left: 0.5rem;
+      }
+      &.first {
+        padding-right: 0.5rem;
+      }
+      &:hover {
+        color: var(--main);
+        transform: scale(1.1);
+        // transform: scaleY(1.5);
+      }
+    }
+  }
+  .prev-next {
+    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    border: 1px solid var(--grey2);
+    display: inline-block;
+    width: 7rem;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+    @include medium {
+      padding: 0rem;
+      width: 5.5rem;
+    }
+    &:hover:not(.active) {
+      box-shadow: none;
+    }
+  }
+  .prev-next.next {
+    margin-left: 1rem;
+    @include small {
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+    }
+    .reverse {
+      transform: rotate(180deg);
+      display: inline-block;
+    }
+  }
+  .prev-next.prev .text {
+    margin-left: 0.7rem;
+    @include large {
+      font-size: 12px;
+      margin-left: 0.5rem;
+    }
+    @include small {
+      font-size: 9px;
+      margin-right: 0.3rem;
+    }
+  }
+  .prev-next.next .text {
+    margin-right: 0.7rem;
+    @include large {
+      font-size: 12px;
+      margin-right: 0.5rem;
+    }
+     @include small {
+      font-size: 9px;
+      margin-right: 0.3rem;
+    }
+  }
+  .prev-next.prev {
+    margin-right: 1rem;
+    @include small {
+      position: absolute;
+      top: 3rem;
+      left: 1rem;
+    }
+  }
+  .prev-next.inactive {
+    box-shadow: none;
+    border: none;
+    pointer-events: none;
+    color: rgba(128, 128, 128, 0.603);
+  }
+}

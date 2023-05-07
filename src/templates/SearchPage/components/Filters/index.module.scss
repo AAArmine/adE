@@ -1,0 +1,73 @@
+@import "@/styles/breakpoints.scss";
+.filters-sec {
+  .filters-cont {
+    padding-top: 2rem;
+    display: flex;
+    background-color: white;
+    flex-wrap: wrap;
+    .min-max-price {
+      @include medium {
+        width: 100%;
+        padding-bottom: 2.5rem;
+      }
+      .price {
+        font-family: roboto-bold;
+        font-size: 15px;
+        padding-right: 0.7rem;
+      }
+      .dash {
+        padding: 0 0.5rem;
+        font-family: roboto-bold;
+      }
+      input {
+        width: 3rem;
+        padding: 0.3rem;
+        text-align: center;
+        background-color: var(--grey2);
+        border: none;
+        font-size: 13px;
+        color: var(--grey3);
+      }
+      input::placeholder {
+        color: var(--grey3);
+        font-style: normal;
+      }
+    }
+  }
+  form {
+    background-color: white !important;
+  }
+  .filter {
+    @include medium {
+      width: 50%;
+    }
+    @media only screen and (max-width: 525px) {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    select {
+      margin-left: 3rem;
+      background-color: var(--grey2);
+      border: none;
+      padding: 0.3rem;
+      color: var(--grey3);
+      option {
+        color: var(--grey3);
+        font-style: normal;
+        font-size: 13px;
+      }
+    }
+  }
+  .filter .spectrum-Dropdown_6d8ec0 {
+    @include medium {
+      padding-left: 0rem;
+    }
+    @media only screen and (max-width: 525px) {
+      width: 100%;
+    }
+  }
+}
+.spectrum-Textfield_73bc77 {
+  width: auto !important;
+}
+

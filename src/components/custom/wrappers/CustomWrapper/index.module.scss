@@ -1,0 +1,11 @@
+@import "@/styles/breakpoints.scss";
+
+.custom-wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 1rem 0;
+  // z-index: -2;
+  @include large {
+    width: 93%
+  }
+}

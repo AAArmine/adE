@@ -1,0 +1,52 @@
+@import "@/styles/breakpoints.scss";
+
+  .advantages-container {
+    
+    h2 {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      font-family: roboto-bold;
+    }
+    .advantages-flex {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      @include medium {
+        width: 65%;
+        margin: auto;
+      }
+      @include small {
+        width: 100%;
+      }
+      .card {
+        width: 23%;
+        border: 1px solid var(--grey2);
+        padding: 0.8rem 0;
+        @include medium {
+          width: 47%;
+          margin-bottom: 1rem;
+        }
+        @include small {
+          width: 48%;
+        }
+        .card-header {
+          font-family: roboto-bold;
+          text-align: center;
+          height: 2.5rem;
+          @include medium {
+            font-size: 15px;
+          }
+        }
+        .card-img {
+          width: 100%;
+        }
+      }
+    }
+    p {
+      font-size: 14px;
+      padding-top: 2rem;
+      color: #5c5d60;
+    }
+  }
+

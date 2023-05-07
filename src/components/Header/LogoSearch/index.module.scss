@@ -1,0 +1,190 @@
+@import "@/styles/breakpoints.scss";
+
+@mixin gridDisplay($columns) {
+  display: grid;
+  grid-template-columns: $columns;
+}
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+.logo-search-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  @include medium {
+    flex-wrap: wrap;
+  }
+  .logo {
+    width: 30%;
+    max-width: 12rem;
+    @include medium {
+      order: -2;
+      width: 50%;
+      padding-bottom: 1rem;
+    }
+
+    img {
+      width: 85%;
+      position: relative;
+      max-width: 13rem;
+    }
+  }
+  .search-advance-cont {
+    width: 100%;
+    .search {
+      position: relative;
+      background-color: white;
+      @include gridDisplay(80% 20%);
+      // @include small {
+        //   grid-template-columns: 100%;
+        // }
+        @media only screen and (max-width: 520px) {
+          grid-template-columns: 100%;
+        }
+        .search-input {
+          @include gridDisplay(1fr 4.5rem);
+          padding: 0.4rem;
+        background-color: var(--grey2);
+        input {
+          width: 100%;
+          border: none;
+          background-color: var(--grey2);
+          border-radius: 0;
+          position: relative;
+          top: 2px;
+        }
+        input::placeholder {
+          font-size: 11px;
+          font-style: normal;
+
+          @include extra-small {
+            font-size: 9px;
+          }
+        }
+        .main-button {
+          font-size: 12px;
+          font-family: roboto-bold;
+          line-height: 16px;
+          border: 5px solid var(--grey2);
+          position: relative;
+          max-width: 8rem;
+        }
+      }
+      .advanced-search {
+        color: var(--main);
+        display: flex;
+        background-color: white;
+        padding-top: 10px;
+        margin-left: 0.6rem;
+        // justify-content: flex-end;
+        @include medium {
+          justify-content: space-between;
+        }
+        @media only screen and (max-width: 520px) {
+          justify-content: flex-start;
+        }
+        @include small {
+          margin-left: 0;
+        }
+        .advanced {
+          font-size: 13px;
+          font-family: roboto-bold;
+          text-align: right;
+          padding-top: 0.2rem;
+          position: relative;
+          top: 6px;
+        }
+        .expand {
+          padding-left: 0.5rem;
+          position: relative;
+          top: 8px;
+
+          @media only screen and (max-width: 520px) {
+            top: 6px;
+          }
+        }
+        .expand.rotate {
+          transform: rotate(180deg);
+          top: -11px;
+          padding-right: 0.5rem;
+          @include medium {
+            right: -8px;
+          }
+          @media only screen and (max-width: 520px) {
+            top: 8px;
+            right: 0px;
+          }
+        }
+      }
+      .advanced-search.inactive {
+        pointer-events: none;
+      }
+    }
+  }
+  .advice {
+    width: 28%;
+    text-align: right;
+    font-size: 14px;
+    font-family: roboto-bold;
+    @include large {
+      width: 35%;
+    }
+    @include medium {
+      order: -1;
+      width: 50%;
+    }
+    @include extra-large {
+      font-size: 12px;
+    }
+    span {
+      font-size: 14px;
+      font-family: roboto-bold;
+      @include extra-large {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.spectrum_b37d53 {
+  width: 100%;
+}
+.spectrum-Form_d2db1f.spectrum-Form--positionTop_d2db1f {
+  @include extra-small {
+    min-width: 11rem !important;
+  }
+}
+.suggestions {
+    // position: absolute;
+    cursor: pointer;
+    padding:0.5rem 1rem;
+    // padding-top: 0.2rem;
+    font-size: 14px;
+    max-height: 15rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 80%;
+    background-color: var(--grey2);
+    position: absolute;
+    z-index:100;
+    top:3rem;
+    &.pb-2 {
+      padding-bottom: 2rem;
+    }
+    @include medium {
+      width: 100%;
+    }
+    div {
+      transition: transform 0.1s ease;
+      &:hover {
+        color: var(--main);
+        transform: scaleX(1.025);
+      }
+    }
+  }
+
+
+  

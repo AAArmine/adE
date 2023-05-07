@@ -1,0 +1,85 @@
+@import "@/styles/breakpoints.scss";
+.statistics-cont {
+  height: 32rem;
+  @include extra-large {
+      height: 32rem;
+    }
+    @include medium {
+      height: 40rem;
+    }
+    @include small {
+      height: 60rem;
+    }
+  // .background-wrapper {
+  //   height: 100% !important;
+  // }
+}
+.statistics-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .statistics-title-sec {
+    color: var(--main);
+    max-width: 25rem;
+    text-align: center;
+    @include small {
+      width: 90%;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-family: roboto-bold;
+      padding: 2rem 0;
+    }
+    p {
+      font-size: 0.8rem;
+      font-family: roboto-bold;
+    }
+  }
+}
+.statistics-data-sec {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  .statistics-data-item {
+    width: 24%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--grey4);
+    padding: 2rem 1rem;
+    span {
+      font-family: roboto-bold;
+      @include extra-large {
+        font-size: 14px;
+      }
+    }
+    @include medium {
+      width: 48%;
+      margin-bottom: 1rem;
+      height: 10rem;
+    }
+    @include small {
+      width: 100%;
+    }
+    .statistics-content {
+      text-align: center;
+      font-family: roboto-bold;
+      font-size: 1.5rem;
+      @include extra-large {
+        font-size: 1.2rem;
+      }
+      span {
+        text-align: center;
+        font-family: roboto-bold;
+        font-size: 1.5rem;
+        @include extra-large {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

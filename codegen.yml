@@ -1,0 +1,12 @@
+schema: https://v2.egluit.dk:2041/graphql
+documents: './src/**/*.graphql'
+generates:
+  src/lib/graphql/types/index.tsx:
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
